@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Methods and Loops</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        h1 {
+            color: #4a90e2;
+            margin-top: 20px;
+        }
+
+        h4 {
+            color: #4a90e2;
+            margin: 10px 0;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        #nameInputSection {
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #357ab7;
+        }
+
+        .container {
+            width: 300px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Methods and Loops in JavaScript</h1>
+    <div class="container">
+        <h4>Here are some random numbers:</h4>
+        <p id="randomNumbers"></p>
+    </div>
+
+    <div class="container">
+        <h4>Current Date:</h4>
+        <p id="currentDate"></p>
+    </div>
+
+    <div class="container">
+        <h4>Rounded Random Number (0 to 100):</h4>
+        <p id="roundedRandom"></p>
+    </div>
+
+    <div id="nameInputSection" class="container">
+        <h4>Enter Your Name:</h4>
+        <input type="text" id="nameInput" placeholder="Type your name here">
+        <br><br>
+        <button onclick="printName()">Display Name 10 Times</button>
+        <p id="nameOutput"></p>
+    </div>
+
+    <script>
+        var randomNumbers = "";
+        for (var i = 0; i < 5; i++) {
+            var num = Math.random() * 100;
+            randomNumbers += num.toFixed(2) + "<br>";
+        }
+        document.getElementById("randomNumbers").innerHTML = randomNumbers;
+
+        var today = new Date();
+        document.getElementById("currentDate").innerHTML = today.toDateString();
+
+        var roundedNum = Math.round(Math.random() * 100);
+        document.getElementById("roundedRandom").innerHTML = roundedNum;
+
+        function printName() {
+            var name = document.getElementById("nameInput").value;
+            var output = "";
+            for (var i = 0; i < 10; i++) {
+                output += name + "<br>";
+            }
+            document.getElementById("nameOutput").innerHTML = output;
+        }
+    </script>
+</body>
+
+</html>
